@@ -32,15 +32,15 @@ export default function Our_projects({ showAll = false }) {
         logo: "/images/projects_2.png",
         bgColor: "bg-[#FFAD00]",
         textColor: "text-white",
-        buttonBg: "shadow-xl bg-[#222222]",
+        buttonBg: "shadow-xl text-[#222222] bg-[#FFAD00]",
       },
       {
         name: "Quality Assurance",
         description: "Delivering excellence through innovation,<br />strategy, and unwavering commitment.",
         logo: "/images/projects_2.png",
-        bgColor: "bg-[#222222]",
+        bgColor: "bg-[#FFAD00]",
         textColor: "text-white",
-        buttonBg: "shadow-xl bg-[#FFAD00]",
+        buttonBg: "shadow-xl text-[#222222] bg-[#FFAD00]",
       }
     );
   }

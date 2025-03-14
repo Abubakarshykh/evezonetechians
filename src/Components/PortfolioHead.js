@@ -31,7 +31,7 @@ export default function PortfolioHead() {
         {/* Image area */}
         <div className="w-[50%] h-[500px] relative ml-[-2rem]">
           <Image
-            src="/Portfolio/Portfolio_headnew.png"
+            src="/Portfolio/portfolio_headnew.png"
             alt="Soldier Image"
             layout="fill"
             objectFit="cover"

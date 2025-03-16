@@ -1,3 +1,4 @@
+import Arrow from "@/Components/Arrow";
 import GlassmorphismGrid from "@/Components/GlassmorphismGrid";
 import Our_projects from "@/Components/OurProjects";
 import PortfolioHead from "@/Components/PortfolioHead";
@@ -8,6 +9,7 @@ export default function page() {
   return (
     <>
     <PortfolioHead/>
+    <Arrow />
     <TechnologyPort/>
     <GlassmorphismGrid/>
     <Our_projects showAll={true}/>

@@ -1,8 +1,8 @@
 const CutShapeSvg = () => {
-    return (
+  return (
+    <div className="w-[1000px] h-auto max-w-full sm:max-w-[650px] md:max-w-[1000px] lg:max-w-[1130px] z-0">
       <svg
-        width="934"
-        height="868"
+        className="w-full h-auto"
         viewBox="0 0 934 868"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -14,8 +14,8 @@ const CutShapeSvg = () => {
           fill="#FFAD00"
         />
       </svg>
-    );
-  };
-  
-  export default CutShapeSvg;
-  
+    </div>
+  );
+};
+
+export default CutShapeSvg;

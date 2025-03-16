@@ -107,11 +107,12 @@ const Navbar = () => {
             </Link>
           ))}
           <button
-            className="px-4 py-2 h-[36px] w-[135px] rounded-[16px] bg-orange-500 text-white font-semibold"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Contact Us
-          </button>
+  className="px-4 py-3 h-[36px] w-[135px] rounded-[16px] bg-orange-500 text-white font-semibold self-center"
+  onClick={() => setMobileMenuOpen(false)}
+>
+  Contact Us
+</button>
+
         </div>
       )}
     </nav>

@@ -33,7 +33,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: exo2.style.fontFamily }}>
+      
+      <body className="font-tactic">
         <Navbar />
         <main>{children}</main>
         <Footer />

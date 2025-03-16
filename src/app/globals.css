@@ -34,3 +34,12 @@ html {
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For IE and Edge */
 }
+@font-face {
+  font-family: "Tactic Sans";
+  src: url("/fonts/TacticSans-Regular.woff2") format("woff2"),
+       url("/fonts/TacticSans-Regular.woff") format("woff"),
+       url("/fonts/TacticSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

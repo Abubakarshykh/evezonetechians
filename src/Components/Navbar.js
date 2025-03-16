@@ -1,7 +1,7 @@
 "use client"; // Required for React state handling in Next.js App Router
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation"; // Change useRouter to usePathname
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react"; // Icons for open/close menu
@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname(); // Get current path
 
-  // Define color schemes for different pages
+  // Define default color scheme
   const pageColors = {
     "/": { bgColor: "bg-transparent", textColor: "text-[#222222]", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
     "/aboutus": { bgColor: "bg-transparent", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
@@ -20,17 +20,20 @@ const Navbar = () => {
   };
 
   // Get current page color scheme or default to home
-  const { bgColor, textColor, hoverColor, activeColor } = pageColors[pathname] || pageColors["/"];
+  let { bgColor, textColor, hoverColor, activeColor } = pageColors[pathname] || pageColors["/"];
 
-  // Track scroll position
+  // Change text color when scrolling or on mobile
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Set true when scrolled down
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Apply white text when scrolling down or on small screens
+  textColor = isScrolled || isMobileMenuOpen ? "text-white" : textColor;
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -42,7 +45,7 @@ const Navbar = () => {
   return (
     <nav
       className={`flex flex-col items-center py-4 fixed w-full top-0 z-50 transition-all duration-300 
-        ${bgColor} ${isScrolled ? "backdrop-blur-lg bg-opacity-80 shadow-md" : ""}`}
+        ${bgColor} ${isScrolled ? "backdrop-blur-xl bg-opacity-80 shadow-md" : ""}`}
     >
       <div className="flex justify-between items-center w-full max-w-[85%]">
         {/* Logo */}
@@ -78,19 +81,24 @@ const Navbar = () => {
         </button>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-white focus:outline-none" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          className="md:hidden cursor-pointer  text-white focus:outline-none"
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+        >
           {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className={`absolute top-16 left-0 w-full p-5 flex flex-col items-center space-y-4 shadow-lg md:hidden transition-all duration-300 ${bgColor}`}>
+        <div
+          className={`absolute backdrop-blur-xl top-20 left-0 w-full p-5 flex flex-col pl-12 space-y-4 shadow-lg md:hidden transition-all duration-300 ${bgColor}`}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.path}
               href={link.path}
-              className={`transition-colors duration-300 ${textColor} ${hoverColor} ${
+              className={`transition-colors duration-300 text-white ${hoverColor} ${
                 pathname === link.path ? activeColor : ""
               }`}
               onClick={() => setMobileMenuOpen(false)}
@@ -98,7 +106,10 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <button className="px-4 py-2 h-[36px] w-[135px] rounded-[16px] bg-orange-500 text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
+          <button
+            className="px-4 py-2 h-[36px] w-[135px] rounded-[16px] bg-orange-500 text-white font-semibold"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Contact Us
           </button>
         </div>

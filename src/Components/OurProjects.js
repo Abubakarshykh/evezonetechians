@@ -58,47 +58,42 @@ export default function Our_projects({ showAll = false }) {
 
       <div className="space-y-8 max-w-6xl mx-auto">
         {projects.map((project, index) => (
-          <div
-          key={index}
-          className={`relative w-full md:w-[1200px] h-auto flex flex-col md:flex-row items-center justify-between p-6 md:p-12 rounded-xl ${project.bgColor}`}
-          style={{ boxShadow: "3px 10px 12px 5px rgb(8, 8, 8)" }}
-        >
-          <Image
-            src="/images/footer_bg.png"
-            width={250}
-            height={200}
-            alt="Background Image"
-            className="absolute right-5 bottom-3 opacity-150 mix-blend-normal pointer-events-none"
-          />
-        
-          {/* Logo Section */}
-          <div className="w-full md:w-1/3 flex justify-center mb-4 md:mb-0">
-            <Image
-              src={project.logo}
-              alt="Project Logo"
-              width={280}
-              height={200}
-              className="object-contain"
-            />
-          </div>
-        
-          {/* Text Content Section */}
-          <div className={`w-full md:w-2/3 ${project.textColor} text-center md:text-start md:pl-20`}>
-            <h1 className="text-xl md:text-3xl font-bold">{project.name}</h1>
-        
-            {/* Description with proper spacing */}
-            <p className="text-sm md:text-lg mt-2 leading-normal" dangerouslySetInnerHTML={{ __html: project.description }} />
-        
-            {/* Button section */}
-            <div className="mt-4 flex justify-center md:justify-start">
-              <button
-                className={`px-6 py-2 rounded-full tracking-wider font-medium ${project.buttonBg} hover:bg-red-600 transition`}
-              >
-                GitHub
-              </button>
-            </div>
-          </div>
-        </div>
+         <div
+         key={index}
+         className={`relative w-full md:w-[1200px] h-auto flex flex-col md:flex-row items-center justify-between p-6 md:p-12 rounded-xl overflow-hidden ${project.bgColor}`}
+         style={{ boxShadow: "3px 10px 12px 5px rgb(8, 8, 8)" }}
+       >
+         {/* Background Image (Fixed) */}
+         <Image
+           src="/images/footer_bg.png"
+           width={220}
+           height={150}
+           alt="Background Image"
+           className="absolute right-20 bottom-0  opacity-90 mix-blend-normal pointer-events-none object-cover"
+         />
+       
+         {/* Logo Section */}
+         <div className="w-full md:w-1/3 flex justify-center mb-4 md:mb-0">
+           <Image
+             src={project.logo}
+             alt="Project Logo"
+             width={280}
+             height={200}
+             className="object-contain"
+           />
+         </div>
+       
+         {/* Text Content Section */}
+         <div className={`w-full md:w-2/3 ${project.textColor} text-center md:text-start md:pl-20`}>
+           <h1 className="text-xl md:text-3xl font-bold">{project.name}</h1>
+           <p className="text-sm md:text-lg mt-2 leading-normal" dangerouslySetInnerHTML={{ __html: project.description }} />
+           <div className="mt-4 flex justify-center md:justify-start">
+             <button className={`px-6 py-2 rounded-full tracking-wider font-medium ${project.buttonBg} hover:bg-red-600 transition`}>
+               GitHub
+             </button>
+           </div>
+         </div>
+       </div>
         
         ))}
       </div>

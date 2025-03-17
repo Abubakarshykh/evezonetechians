@@ -51,8 +51,11 @@ const Navbar = () => {
       <div className="flex justify-between items-center w-full max-w-[85%]">
         {/* Logo */}
         <div className="flex justify-center items-center space-x-2">
-          <Image src="/images/Vector 1.png" alt="Logo" width={100} height={100} />
-        </div>
+  <Link href="/">
+    <Image src="/images/Vector 1.png" alt="Logo" width={100} height={100} className="cursor-pointer" />
+  </Link>
+</div>
+
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-14 font-semibold">

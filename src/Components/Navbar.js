@@ -13,10 +13,10 @@ const Navbar = () => {
 
   // Define default color scheme
   const pageColors = {
-    "/": { bgColor: "bg-transparent", textColor: "text-[#222222]", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
-    "/aboutus": { bgColor: "bg-transparent", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
-    "/portfolio": { bgColor: "bg-transparent", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
-    "/privacy": { bgColor: "bg-transparent", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
+    "/": { bgColor: "", textColor: "text-[#222222]", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
+    "/aboutus": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
+    "/portfolio": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
+    "/privacy": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
   };
 
   // Get current page color scheme or default to home
@@ -33,7 +33,8 @@ const Navbar = () => {
   }, []);
 
   // Apply white text when scrolling down or on small screens
-  textColor = isScrolled || isMobileMenuOpen ? "text-white" : textColor;
+  textColor = isScrolled || isMobileMenuOpen ? "text-white backdrop-blur-xl" : textColor;
+
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -92,7 +93,7 @@ const Navbar = () => {
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <div
-          className={`absolute backdrop-blur-xl top-20 left-0 w-full p-5 flex flex-col pl-12 space-y-4 shadow-lg md:hidden transition-all duration-300 ${bgColor}`}
+          className={`absolute bg-gradient-to-r from-[#222222] to-[#FFAD00]  backdrop-blur-xl top-20 left-0 w-full p-5 flex flex-col pl-12 space-y-4 shadow-lg md:hidden transition-all duration-300 ${bgColor}`}
         >
           {navLinks.map((link) => (
             <Link
@@ -107,7 +108,7 @@ const Navbar = () => {
             </Link>
           ))}
           <button
-  className="px-4 py-3 h-[36px] w-[135px] rounded-[16px] bg-orange-500 text-white font-semibold self-center"
+  className="px-4 py-1 w-[135px] rounded-[16px] bg-white text-[#222222] font-semibold self-center"
   onClick={() => setMobileMenuOpen(false)}
 >
   Contact Us

@@ -1,10 +1,10 @@
 export default function Privacy() {
   return (
     <>
-      <section className="text-white pt-[14rem] py-4 min-h-screen">
+      <section className="text-white md:pt-[14rem] pt-30 py-4 min-h-screen">
         <div className="max-w-[85%] bg-transparent mx-auto">
           {/* Privacy Policy Heading */}
-          <header className="mb-10 text-center">
+          <header className="mb-10 space-y-6 md:text-center">
             <h1 className="text-6xl font-bold">Privacy Policy</h1>
             <p className="mt-4 text-2xl text-gray-300 text-left">
               Our commitment is to elevate your digital journey, unlocking limitless possibilities.

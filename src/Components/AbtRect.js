@@ -5,7 +5,7 @@ export default function ImageWithText() {
     <div className="relative flex items-center justify-center w-full md:h-[400px] px-4">
       {/* Custom Clipped Image with Shadow */}
       <div 
-        className="relative w-full sm:w-[80%] md:w-[45%] h-[260px] sm:h-[300px] md:h-[340px] overflow-hidden 
+        className="relative w-full sm:w-[80%] md:w-[45%] h-[260px] sm:h-[300px] md:h-[340px] h-full overflow-hidden 
                    clip-path-custom"
       >
         <Image
@@ -18,8 +18,8 @@ export default function ImageWithText() {
         />
         {/* Overlay Text with Glassmorphism */}
         <div
-          className="absolute inset-18 flex flex-col items-center justify-center text-center
-                     bg-opacity-0 backdrop-blur-none bg-white/10 shadow-[0px_4px_4px_6px_#0000008C] 
+          className="absolute inset-20 flex flex-col items-center justify-center text-center
+                     bg-opacity-90 shadow-[0px_4px_4px_6px_#0000008C] 
                      p-4 sm:p-6 rounded-lg"
         >
           <h2 className="text-white text-sm sm:text-lg font-semibold">
@@ -27,9 +27,9 @@ export default function ImageWithText() {
           </h2>
 
           <button
-            className="mt-3 sm:mt-4 text-sm sm:text-md px-4 sm:px-6 py-2 sm:py-3 bg-[#FFAD00] 
+            className="mt-3 sm:mt-4 text-sm sm:text-md px-4 sm:px-6 py-4 flex items-center sm:py-3 bg-[#FFAD00] 
                        rounded-md text-[#222222] font-bold shadow-lg transform skew-x-[-20deg] 
-                       relative overflow-hidden"
+                       relative overflow-hidden z-50"
           >
             <div className="inline-block transform skew-x-[20deg]">
               Reach Out, We&apos;re Ready!

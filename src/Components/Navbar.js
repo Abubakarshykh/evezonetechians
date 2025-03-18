@@ -80,9 +80,11 @@ const Navbar = () => {
         </ul>
 
         {/* Contact Button (Desktop) */}
-        <button className="hidden md:block px-4 py-2 h-[36px] w-[135px] rounded-[16px] text-white z-50 font-semibold bg-[#222222]">
+        <a href="Contact" className="no-underline">
+        <button className="hidden md:block cursor-pointer px-4 py-2 h-[36px] w-[135px] rounded-[16px] text-white z-50 font-semibold bg-[#222222]">
           Contact Us
         </button>
+        </a>
 
         {/* Mobile Menu Button */}
         <button

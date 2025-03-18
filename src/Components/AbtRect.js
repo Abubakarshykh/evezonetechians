@@ -29,7 +29,7 @@ export default function ImageWithText() {
           <button
             className="mt-3 sm:mt-4 text-sm sm:text-md px-4 sm:px-6 py-4 flex items-center sm:py-3 bg-[#FFAD00] 
                        rounded-md text-[#222222] font-bold shadow-lg transform skew-x-[-20deg] 
-                       relative overflow-hidden z-50"
+                       relative overflow-hidden z-50 hover:bg-[#222222] hover:text-[#FFAD00] duration-400"
           >
             <div className="inline-block transform skew-x-[20deg]">
               Reach Out, We&apos;re Ready!

@@ -2,7 +2,7 @@
 
 :root {
   --background: #222222;
-  /* --foreground: #ffffff; */
+  --font-sans: var(--font-orbitron); /* Apply Orbitron globally */
 }
 
 @theme inline {
@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: tactic-sans, Helvetica, sans-serif;
+  font-family: var(--font-tactic-sans), sans-serif;
 }
 
 /* Hide scrollbar for all browsers */

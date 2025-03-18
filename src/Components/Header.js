@@ -18,7 +18,7 @@ export default function Header() {
       <div className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-0 py-16 md:py-0 text-white min-h-screen">
         {/* Left Content */}
         <div className="w-full md:w-[50%] space-y-6 text-center md:text-left z-20 md:pl-30 md:pt-30 pt-15">
-          <h1 className="text-4xl md:text-5xl text-white font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl text-white orbitron-text font-bold leading-tight">
             {headingText.map((text, index) => (
               <span key={index} dangerouslySetInnerHTML={{ __html: text }} />
             ))}
@@ -27,7 +27,7 @@ export default function Header() {
           <div className="flex md:flex-row items-center md:items-start pt-2 space-y-0 space-x-6 justify-center md:space-y-0 md:space-x-8">
             {/* About Us Button */}
             <a href="/aboutus" className="no-underline">
-              <button className="px-8 py-3 rounded-xl font-semibold bg-gradient-to-r from-[#222222] to-[#FFAD00] hover:from-[#FFAD00] hover:to-[#222222] transition-all duration-300 shadow-xl"
+              <button className="px-8 py-3 orbitron-text rounded-xl cursor-pointer font-semibold bg-gradient-to-r from-[#222222] to-[#FFAD00] hover:from-[#FFAD00] hover:to-[#222222] transition-all duration-300 shadow-xl"
               style={{ boxShadow: "2px 3px 3px 2px rgb(8, 8, 8)" }}>
                 About Us
               </button>
@@ -35,7 +35,7 @@ export default function Header() {
 
             {/* Portfolio Button */}
             <a href="/portfolio" className="no-underline">
-              <button className="px-8 py-3 text-white rounded-xl font-semibold bg-gradient-to-r from-[#222222] to-[#FFAD00] hover:from-[#FFAD00] hover:to-[#222222] transition-all duration-300 shadow-md"
+              <button className="px-8 py-3 text-white rounded-xl cursor-pointer font-semibold bg-gradient-to-r from-[#222222] to-[#FFAD00] hover:from-[#FFAD00] hover:to-[#222222] transition-all duration-300 shadow-md"
               style={{ boxShadow: "2px 3px 3px 2px rgb(8, 8, 8)" }}>
                 Portfolio
               </button>

@@ -112,12 +112,14 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <a href="/Contact" className="no-underline">
           <button
   className="px-4 py-1 w-[135px] rounded-[16px] bg-white text-[#222222] font-semibold self-center"
   onClick={() => setMobileMenuOpen(false)}
 >
   Contact Us
 </button>
+</a>
 
         </div>
       )}

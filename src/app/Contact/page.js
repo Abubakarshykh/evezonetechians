@@ -161,7 +161,7 @@ const ElfsightWidget = () => {
         Get in Touch with <span className="text-white">EveZone</span>
       </h1>
       <p className="mt-4 text-lg text-white md:text-xl">
-        Have questions or need assistance? Reach out to us and we'll be happy to help.
+        Have questions or need assistance? Reach out to us and We&apos;ll be happy to help.
       </p>
     </div>
       <div

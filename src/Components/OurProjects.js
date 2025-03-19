@@ -46,7 +46,7 @@ export default function Our_projects({ showAll = false }) {
   }
 
   return (
-    <section className="w-full py-16 px-6 text-white">
+    <section className="w-full py-16 px-6 text-white" id="projects">
       <div className="text-center mb-12">
         <h2 className="text-4xl text-gray-400 font-semibold tracking-wider uppercase opacity-80">
           Our Projects
@@ -102,12 +102,13 @@ export default function Our_projects({ showAll = false }) {
 
       {!showAll && (
         <div className="mt-8 text-center">
-          <button
-            className="px-8 py-3 text-white rounded-xl cursor-pointer font-semibold bg-[#FFAD00] hover:text-[#222222] duration-500 shadow-md transform transition-transform hover:scale-110 hover:shadow-2xl"
-            onClick={() => router.push("/portfolio")}
-          >
-            View All
-          </button>
+         <button
+  className="px-8 py-3 text-white rounded-xl cursor-pointer font-semibold bg-[#FFAD00] hover:text-[#222222] duration-500 shadow-md transform transition-transform hover:scale-110 hover:shadow-2xl"
+  onClick={() => router.push("/portfolio#projects")}
+>
+  View All
+</button>
+
         </div>
       )}
     </section>

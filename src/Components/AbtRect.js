@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ImageWithText() {
   return (
@@ -26,6 +27,7 @@ export default function ImageWithText() {
             Feeling weighed down by<br /> thoughts that shouldn&apos;t be<br /> weighing you down?
           </h2>
 
+        <Link href="/Contact">
           <button
             className="mt-3 sm:mt-4 text-sm sm:text-md px-4 sm:px-6 py-4 flex items-center sm:py-3 bg-[#FFAD00] 
                        rounded-md text-[#222222] font-bold shadow-lg transform skew-x-[-20deg] 
@@ -35,6 +37,7 @@ export default function ImageWithText() {
               Reach Out, We&apos;re Ready!
             </div>
           </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -9,12 +9,14 @@ import Arrow from "@/Components/Arrow";
 export default function Page() {
   return (
     <>
+    <div className="bg-[#222222]">
       <AboutHead />
       <Line/>
       <Soldier/>
       <Arrow showOnAllScreens={true} />
       <MeetTheLeaders/>
       <AbtRect/>
+      </div>
     </>
   );
 }

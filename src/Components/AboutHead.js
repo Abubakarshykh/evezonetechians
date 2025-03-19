@@ -9,7 +9,7 @@ const paragraphText = [
 
 export default function AboutHead() {
   return (
-    <section className="relative w-full h-[550px] flex items-center justify-center">
+    <section className="relative w-full h-[550px] border-b border-[#FFAD00] flex items-center justify-center">
       {/* Background Image with Dull Brightness */}
       <div className="absolute inset-0">
         <Image

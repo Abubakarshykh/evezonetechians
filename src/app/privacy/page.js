@@ -1,7 +1,8 @@
 export default function Privacy() {
   return (
     <>
-      <section className="text-white md:pt-[14rem] pt-30 py-4 min-h-screen">
+      <section className="text-white md:pt-[14rem] pt-30 py-4 min-h-screen bg-[#222222]">
+        
         <div className="max-w-[85%] bg-transparent mx-auto">
           {/* Privacy Policy Heading */}
           <header className="mb-10 space-y-6 md:text-center">

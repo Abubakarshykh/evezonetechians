@@ -13,7 +13,7 @@ const Navbar = () => {
 
   // Define default color scheme
   const pageColors = {
-    "/": { bgColor: "", textColor: "text-[#222222]", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
+    "/": { bgColor: "", textColor: "text-white font-bold", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
     "/aboutus": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
     "/portfolio": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
     "/privacy": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
@@ -33,8 +33,9 @@ const Navbar = () => {
   }, []);
 
   // Apply white text when scrolling down or on small screens
-  textColor = isScrolled || isMobileMenuOpen ? "text-white backdrop-blur-xl" : textColor;
-
+  if (pathname !== "/") {
+    textColor = isScrolled || isMobileMenuOpen ? "text-white backdrop-blur-xl" : textColor;
+  }
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -46,16 +47,15 @@ const Navbar = () => {
   return (
     <nav
       className={`flex flex-col items-center py-4 fixed w-full top-0 z-50 transition-all duration-300 
-        ${bgColor} ${isScrolled ? "backdrop-blur-xl bg-opacity-80 shadow-md" : ""}`}
+        ${bgColor} ${isScrolled ? "backdrop-blur-xl bg-opacity-80 bg-white/10 shadow-md" : ""}`}
     >
       <div className="flex justify-between items-center w-full max-w-[85%]">
         {/* Logo */}
         <div className="flex justify-center items-center space-x-2">
-  <Link href="/">
-    <Image src="/images/Vector 1.png" alt="Logo" width={100} height={100} className="cursor-pointer" />
-  </Link>
-</div>
-
+          <Link href="/">
+            <Image src="/images/Vector 1.png" alt="Logo" width={80} height={80} className="cursor-pointer" />
+          </Link>
+        </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-14 font-semibold">
@@ -80,47 +80,44 @@ const Navbar = () => {
         </ul>
 
         {/* Contact Button (Desktop) */}
-        <a href="Contact" className="no-underline">
-        <button className="hidden md:block cursor-pointer px-4 py-2 h-[36px] w-[135px] rounded-[16px] text-white z-50 font-semibold bg-[#222222]">
-          Contact Us
-        </button>
+        <a href="/contact" className="no-underline">
+          <button className="hidden md:block cursor-pointer px-4 py-2 h-[36px] w-[135px] rounded-[16px] text-[#222222] z-50 font-semibold bg-white">
+            Contact Us
+          </button>
         </a>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden cursor-pointer  text-white focus:outline-none"
+          className="md:hidden cursor-pointer text-white focus:outline-none"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* ✅ Mobile Menu */}
       {isMobileMenuOpen && (
-        <div
-          className={`absolute bg-gradient-to-r from-[#222222] to-[#FFAD00]  backdrop-blur-xl top-20 left-0 w-full p-5 flex flex-col pl-12 space-y-4 shadow-lg md:hidden transition-all duration-300 ${bgColor}`}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              className={`transition-colors duration-300 text-white ${hoverColor} ${
-                pathname === link.path ? activeColor : ""
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <a href="/Contact" className="no-underline">
-          <button
-  className="px-4 py-1 w-[135px] rounded-[16px] bg-white text-[#222222] font-semibold self-center"
-  onClick={() => setMobileMenuOpen(false)}
->
-  Contact Us
-</button>
-</a>
-
+        <div className="md:hidden absolute top-full left-0 w-full bg-black bg-opacity-90 text-white backdrop-blur-lg py-6 transition-all duration-300">
+          <ul className="flex flex-col items-center space-y-4 font-semibold">
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <Link
+                  href={link.path}
+                  className={`cursor-pointer transition-colors duration-300 text-white hover:text-gray-300 ${
+                    pathname === link.path ? "text-yellow-400 font-bold" : ""
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)} // Close menu on click
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <a href="/contact" className="no-underline">
+              <button className="cursor-pointer px-4 py-2 h-[36px] w-[135px] rounded-[16px] text-black font-semibold bg-white">
+                Contact Us
+              </button>
+            </a>
+          </ul>
         </div>
       )}
     </nav>

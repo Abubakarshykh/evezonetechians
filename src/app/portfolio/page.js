@@ -8,11 +8,13 @@ import TechnologyPort from "@/Components/TechnologyPort";
 export default function page() {
   return (
     <>
+    <div className="bg-[#222222]">
     <PortfolioHead/>
     <Arrow />
     <TechnologyPort/>
     <GlassmorphismGrid/>
     <Our_projects showAll={true}/>
+    </div>
     </>
   )
 }

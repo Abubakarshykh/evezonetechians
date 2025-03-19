@@ -40,6 +40,24 @@ export default function Home() {
       name: "Devon Miles"
       // title: "Freelancer",
     },
+    {
+      image: "/images/test_1.png",
+      quote: "DevNest delivered a top-notch website—visually stunning, user-friendly, and on time. Their seamless collaboration and commitment to excellence set them apart in web development.",
+      name: "Mike Torello"
+      // title: "CEO, Company A",
+    },
+    {
+      image: "/images/test_L.png",
+      quote: "DevNest delivered a top-notch website—visually stunning, user-friendly, and on time. Their seamless collaboration and commitment to excellence set them apart in web development.",
+      name: "Rick Wright"
+      // title: "Marketing Director, Company B",
+    },
+    {
+      image: "/images/test_R.png",
+      quote: "DevNest delivered a top-notch website—visually stunning, user-friendly, and on time. Their seamless collaboration and commitment to excellence set them apart in web development.",
+      name: "Devon Miles"
+      // title: "Freelancer",
+    },
   ];
   
 

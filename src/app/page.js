@@ -64,13 +64,10 @@ export default function Home() {
   return (
     <>
       {/* {loading ? (
-        <Preloader />
       ) : ( */}
         <div className="bg-[#222222]">
           <Header />
           <Services />
-          {/* <Testimonials /> */}
-          {/* <TestimonialsN/> */}
           <InfiniteMovingCards items={testimonials} speed="normal" direction="left" />
           <OurProjects />
         </div> 

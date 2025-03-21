@@ -1,27 +1,9 @@
-// import { Geist, Geist_Mono } from "next/font/google";
-// import { Exo_2 } from "next/font/google";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
-// import FooterS from "@/Components/FooterS";
 import localFont from 'next/font/local';
 import Footer from "@/Components/Footer";
 
-// const exo2 = Exo_2({
-//   subsets: ["latin"],
-//   weight: ["400", "700"],
-//   display: "swap",
-// });
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const orbitron = Orbitron({
   subsets: ["latin"], // Ensures proper language support
@@ -46,7 +28,6 @@ export default function RootLayout({ children }) {
         <Navbar/>
         <main>{children}</main>
         <Footer />
-        {/* <FooterS/> */}
       </body>
     </html>
   );

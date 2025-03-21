@@ -13,10 +13,10 @@
       <div className="relative py-12 max-w-full">
         {/* Title Section */}
         <div className="text-center text-white">
-          <h1 className="text-[#CACACA] text-4xl md:text-5xl font-bold my-6">
-            SERVICES <span className="text-[#ffffff]">WE PROVIDE</span>
+          <h1 className="text-gray-400 text-4xl md:text-5xl font-bold my-6">
+            SERVICES <span className="text-white">WE PROVIDE</span>
           </h1>
-          <p className="text-gray-300 text-md md:text-lg">
+          <p className="text-white text-md md:text-lg">
             Delivering excellence through innovation, strategy, and unwavering <br className="hidden md:block" /> commitment.
           </p>
         </div>

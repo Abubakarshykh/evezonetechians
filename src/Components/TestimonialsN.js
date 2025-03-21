@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { cn } from "@/app/lib/utils";
+import { FaStar, FaRegStar } from "react-icons/fa"; // Import star icons
 
 const InfiniteMovingCards = ({ items, className }) => {
   const scrollerRef = useRef(null);
@@ -9,7 +10,6 @@ const InfiniteMovingCards = ({ items, className }) => {
   const scrollLeft = () => {
     if (scrollerRef.current) {
       if (scrollerRef.current.scrollLeft === 0) {
-        // Loop to the end if at the start
         scrollerRef.current.scrollLeft = scrollerRef.current.scrollWidth;
       }
       scrollerRef.current.scrollBy({ left: -350, behavior: "smooth" });
@@ -22,7 +22,6 @@ const InfiniteMovingCards = ({ items, className }) => {
         scrollerRef.current.scrollLeft + scrollerRef.current.clientWidth >=
         scrollerRef.current.scrollWidth
       ) {
-        // Loop back to the start if at the end
         scrollerRef.current.scrollLeft = 0;
       }
       scrollerRef.current.scrollBy({ left: 350, behavior: "smooth" });
@@ -30,9 +29,9 @@ const InfiniteMovingCards = ({ items, className }) => {
   };
 
   return (
-    <div className="text-white w-full pt-20 pb-10 my-6 md:my-10 bg-[linear-gradient(114.53deg,#222222_0%,#FFAD00_122.58%)]">
+    <div className="text-white w-full pt-10 pb-10 my-6 md:my-10 bg-[linear-gradient(114.53deg,#222222_0%,#FFAD00_122.58%)]">
       <div className="text-center space-y-6 my-8">
-        <h3 className="text-xl font-semibold tracking-wider uppercase opacity-90">
+        <h3 className="text-xl text-gray-400 font-semibold tracking-wider uppercase opacity-90">
           Testimonials
         </h3>
         <h2 className="text-3xl md:text-4xl font-bold">What Our Customers Say</h2>
@@ -48,38 +47,46 @@ const InfiniteMovingCards = ({ items, className }) => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-20 h-20 rounded-full border-4 border-white shadow-lg "
+                  className="w-20 h-20 rounded-full border-4 border-white shadow-lg"
                 />
               </div>
               <blockquote className="mt-12 text-center">
-    <p className="text-md leading-[1.6] tracking-widest">{item.quote}</p>
-    <div className="mt-4 flex flex-col">
-      <span className="text-xl font-bold text-white">{item.name}</span>
-      {/* <span className="text-xs text-white">{item.title}</span> */}
-    </div>
-  </blockquote>
+                <p className="text-md leading-[1.6] tracking-widest">{item.quote}</p>
+
+                {/* Star Rating */}
+                <div className="flex justify-center mt-4 text-yellow-400">
+                  {Array.from({ length: 5 }, (_, i) =>
+                    i < item.rating ? (
+                      <FaStar key={i} className="text-xl" /> // Filled star
+                    ) : (
+                      <FaRegStar key={i} className="text-xl" /> // Empty star
+                    )
+                  )}
+                </div>
+
+                {/* Name */}
+                <div className="mt-4 flex flex-col">
+                  <span className="text-xl font-bold text-white">{item.name}</span>
+                </div>
+              </blockquote>
             </div>
           ))}
         </div>
       </div>
-      {/* Buttons moved to the bottom */}
       <div className="flex justify-center gap-6 mt-20">
-  <button
-    className="w-16 h-16  bg-white/10 backdrop-blur-xl border border-white text-white rounded-full shadow-lg flex items-center justify-center"
-    onClick={scrollLeft}
-  >
-    ◀
-  </button>
-  <button
-  className="w-16 h-16 bg-white/10 backdrop-blur-xl border border-white text-white rounded-full shadow-lg flex items-center justify-center"
-  onClick={scrollRight}
->
-  ▶
-</button>
-
-
-</div>
-
+        <button
+          className="w-16 h-16 bg-white/10 backdrop-blur-xl border border-white text-white rounded-full shadow-lg flex items-center justify-center"
+          onClick={scrollLeft}
+        >
+          ◀
+        </button>
+        <button
+          className="w-16 h-16 bg-white/10 backdrop-blur-xl border border-white text-white rounded-full shadow-lg flex items-center justify-center"
+          onClick={scrollRight}
+        >
+          ▶
+        </button>
+      </div>
     </div>
   );
 };

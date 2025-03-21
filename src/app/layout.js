@@ -3,8 +3,9 @@
 import { Orbitron } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/Footer";
+// import FooterS from "@/Components/FooterS";
 import localFont from 'next/font/local';
+import Footer from "@/Components/Footer";
 
 // const exo2 = Exo_2({
 //   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
         <Navbar/>
         <main>{children}</main>
         <Footer />
+        {/* <FooterS/> */}
       </body>
     </html>
   );

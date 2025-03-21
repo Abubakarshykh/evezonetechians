@@ -13,10 +13,10 @@ const Navbar = () => {
 
   // Define default color scheme
   const pageColors = {
-    "/": { bgColor: "", textColor: "text-white font-bold", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
-    "/aboutus": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
-    "/portfolio": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
-    "/privacy": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-gray-300", activeColor: "text-white font-bold" },
+    "/": { bgColor: "", textColor: "text-white font-bold", hoverColor: "hover:text-[#FFAD00]", activeColor: "text-white font-bold" },
+    "/aboutus": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-[#FFAD00]", activeColor: "text-white font-bold" },
+    "/portfolio": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-[#FFAD00]", activeColor: "text-white font-bold" },
+    "/privacy": { bgColor: "", textColor: "text-white", hoverColor: "hover:text-[#FFAD00]", activeColor: "text-white font-bold" },
   };
 
   // Get current page color scheme or default to home

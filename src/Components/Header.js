@@ -47,7 +47,7 @@ export default function Header() {
         {/* Right Content - Image & SVG */}
         <div className="relative md:block w-full md:w-auto h-full flex justify-center md:justify-end items-center">
           {/* Hide SVG on small screens */}
-          <div className="hidden md:block absolute top-0 right-0 bottom-0 w-full md:w-auto h-full z-10">
+          <div className="hidden md:block absolute top-0 right-0 bottom-0 w-full md:w-auto h-full z-10" >
             <CutShapeSvg className="w-full md:w-auto h-full" />
           </div>
 

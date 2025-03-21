@@ -9,9 +9,17 @@ const CutShapeSvg = () => {
         role="img"
         aria-hidden="true"
       >
+        {/* Define Image Pattern */}
+        <defs>
+          <pattern id="bgPattern" patternUnits="userSpaceOnUse" width="934" height="868">
+            <image href="/images/footerS.jpg" className="brightness-20" width="934" height="868" preserveAspectRatio="xMidYMid slice" />
+          </pattern>
+        </defs>
+
+        {/* Apply Pattern to Shape */}
         <path
           d="M158 354.5C16.812 191.209 -49.1679 61.7535 42.685 0H934V812.206C752.94 1033.05 314.5 535.5 158 354.5Z"
-          fill="#FFAD00"
+          fill="url(#bgPattern)"
         />
       </svg>
     </div>

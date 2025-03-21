@@ -49,9 +49,9 @@ export default function Our_projects({ showAll = false }) {
     <section className="w-full py-16 px-6 text-white" id="projects">
       <div className="text-center mb-12">
         <h2 className="text-4xl text-gray-400 font-semibold tracking-wider uppercase opacity-80">
-          Our Projects
+          Our <span className="text-white">Projects</span>
         </h2>
-        <h3 className="text-lg font-bold text-white">
+        <h3 className="text-lg font-normal text-white">
           We are Dedicated to Exceeding Your Expectations
         </h3>
       </div>

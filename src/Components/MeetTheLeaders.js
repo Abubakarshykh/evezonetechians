@@ -12,8 +12,8 @@ export default function MeetTheLeaders() {
   return (
     <section className="bg-transparent text-white py-16 px-6">
       <div className="text-center mb-20">
-        <h1 className="text-[#CACACA] text-4xl md:text-5xl font-bold my-6">
-          MEET <span className="text-[#ffffff]">THE LEADERS</span>
+        <h1 className="text-gray-400 text-4xl md:text-5xl font-bold my-6">
+          MEET <span className="text-white">THE LEADERS</span>
         </h1>
       </div>
 

@@ -37,7 +37,7 @@ export default function MeetTheLeaders() {
                 alt={leader.name}
                 width={240}
                 height={280}
-                className="w-full h-full object-contain grayscale transition-all duration-500 hover:grayscale-0"
+                className="w-full h-full object-contain md:grayscale transition-all duration-500 hover:grayscale-0"
               />
             </div>
             <h3 className="font-bold text-base sm:text-lg text-white mt-3 sm:mt-4">{leader.name}</h3>

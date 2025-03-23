@@ -80,7 +80,7 @@ const Navbar = () => {
         </ul>
 
         {/* Contact Button (Desktop) */}
-        <a href="/contact" className="no-underline">
+        <a href="/Contact" className="no-underline">
           <button className="hidden md:block cursor-pointer px-4 py-2 h-[36px] w-[135px] rounded-[16px] text-[#222222] z-50 font-semibold bg-white">
             Contact Us
           </button>

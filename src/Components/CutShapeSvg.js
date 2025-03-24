@@ -1,6 +1,6 @@
 const CutShapeSvg = () => {
   return (
-    <div className="w-[1000px] h-auto max-w-full sm:max-w-[650px] md:max-w-[1000px] lg:max-w-[1130px] z-0">
+    <div className="w-[1080px] h-auto max-w-full sm:max-w-[650px] md:max-w-[1000px] lg:max-w-[1130px] z-0">
       <svg
         className="w-full h-auto"
         viewBox="0 0 934 868"

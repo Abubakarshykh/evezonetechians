@@ -23,7 +23,7 @@ export default function GlassmorphismGrid() {
 
   return (
     <section className="w-full py-16 px-6 flex justify-center">
-      <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:max-w-6xl justify-items-center">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:max-w-6xl justify-items-center sm:px-6">
         {tools.map((tool, index) => (
           <div
             key={index}

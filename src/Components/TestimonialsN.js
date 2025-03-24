@@ -1,31 +1,41 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { cn } from "@/app/lib/utils";
 import { FaStar, FaRegStar } from "react-icons/fa"; // Import star icons
 
 const InfiniteMovingCards = ({ items, className }) => {
   const scrollerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const scrollLeft = () => {
+  const scrollToIndex = (index) => {
     if (scrollerRef.current) {
-      if (scrollerRef.current.scrollLeft === 0) {
-        scrollerRef.current.scrollLeft = scrollerRef.current.scrollWidth;
+      const children = scrollerRef.current.children;
+      if (children[index]) {
+        children[index].scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
       }
-      scrollerRef.current.scrollBy({ left: -350, behavior: "smooth" });
+      setCurrentIndex(index);
     }
   };
 
+  const scrollLeft = () => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex > 0 ? prevIndex - 1 : items.length - 1; // Loop back to last item
+      scrollToIndex(newIndex);
+      return newIndex;
+    });
+  };
+
   const scrollRight = () => {
-    if (scrollerRef.current) {
-      if (
-        scrollerRef.current.scrollLeft + scrollerRef.current.clientWidth >=
-        scrollerRef.current.scrollWidth
-      ) {
-        scrollerRef.current.scrollLeft = 0;
-      }
-      scrollerRef.current.scrollBy({ left: 350, behavior: "smooth" });
-    }
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex < items.length - 1 ? prevIndex + 1 : 0; // Loop back to first item
+      scrollToIndex(newIndex);
+      return newIndex;
+    });
   };
 
   return (
@@ -37,11 +47,14 @@ const InfiniteMovingCards = ({ items, className }) => {
         <h2 className="text-3xl md:text-4xl font-bold">What Our Customers Say</h2>
       </div>
       <div className={cn("relative flex justify-center", className)}>
-        <div ref={scrollerRef} className="flex overflow-x-hidden space-x-6 px-10 w-full max-w-full">
+        <div
+          ref={scrollerRef}
+          className="flex overflow-x-auto scroll-smooth space-x-6 px-10 w-full max-w-full items-center snap-x snap-mandatory"
+        >
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="relative w-[350px] sm:max-w-[350px] md:max-w-[750px] max-w-full rounded-4xl border border-white bg-white/10 backdrop-blur-xl px-6 py-10 md:w-[450px] text-white flex-shrink-0"
+              className="relative w-[450px] flex justify-center sm:max-w-[350px] md:max-w-[750px] max-w-full rounded-4xl border border-white bg-white/10 backdrop-blur-xl px-6 py-10 md:w-[520px] text-white flex-shrink-0 snap-center"
             >
               <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-50">
                 <img
@@ -54,15 +67,20 @@ const InfiniteMovingCards = ({ items, className }) => {
                 <p className="text-md leading-[1.6] tracking-widest">{item.quote}</p>
 
                 {/* Star Rating */}
-                <div className="flex justify-center mt-4 text-yellow-400">
-                  {Array.from({ length: 5 }, (_, i) =>
-                    i < item.rating ? (
-                      <FaStar key={i} className="text-xl" /> // Filled star
-                    ) : (
-                      <FaRegStar key={i} className="text-xl" /> // Empty star
-                    )
-                  )}
-                </div>
+                <div className="flex justify-center mt-4">
+  {Array.from({ length: 5 }, (_, i) => (
+    <span key={i}>
+      {i < Math.round(item.rating) ? (
+        <FaStar className="text-xl text-yellow-400" /> // Gold filled star
+      ) : (
+        <FaRegStar className="text-xl text-gray-400" /> // Gray empty star
+      )}
+    </span>
+  ))} 
+</div>
+
+
+
 
                 {/* Name */}
                 <div className="mt-4 flex flex-col">

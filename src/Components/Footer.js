@@ -9,16 +9,6 @@ export default function Footer() {
       <div className="absolute inset-0 bg-cover bg-center w-full h-full brightness-20" 
      style={{ backgroundImage: "url('/images/footerS.jpg')" }}>
 </div>
-
-      {/* Right-Side Background Image */}
-      {/* <Image
-        src="/images/footer_bg.png"
-        width={300}
-        height={412}
-        alt="Background Image"
-        className="absolute right-5 bottom-10 opacity-100 mix-blend-normal pointer-events-none hidden sm:block w-[200px] md:w-[300px]"
-      /> */}
-
       {/* Footer Content Grid */}
       <div className="max-w-8xl mx-auto px-12 md:px-[10rem] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-20 gap-8 items-center relative z-10">
         {/* Left-aligned Column */}
@@ -60,30 +50,21 @@ export default function Footer() {
         </div>
 
         {/* Social Media & Subscribe Section */}
-        <div className="text-left w-full ">
-          
-          <div className="gap-y-10">
-          <h3 className="font-bold pl-1 mb-4 text-3xl">Follow Us</h3>
-          <a href="mailto:queries@evzonetech.com"
-          className="inline-block bg-white text-black font-bold py-1 px-4 rounded-xl hover:bg-[#FFAD00] transition duration-300">
-            Email Us
+        <div className="text-right w-full">
+          <div className="">
+            <h3 className="font-bold mb-4 text-3xl">Follow Us</h3>
+            <div className="flex justify-end space-x-4 mb-4 pb-2">
+              <a href="#" className="text-white text-2xl hover:text-blue-800"><FaFacebookF /></a>
+              <a href="#" className="text-white text-2xl hover:text-purple-600"><FaInstagram /></a>
+              <a href="#" className="text-white text-2xl hover:text-blue-400"><FaTwitter /></a>
+              <a href="#" className="text-white text-2xl hover:text-blue-900"><FaLinkedinIn /></a>
+              <a href="#" className="text-white text-2xl hover:text-gray-900"><FaGithub /></a>
+            </div>
+            <a href="mailto:queries@evzonetech.com"
+              className="inline-block w-[50%]  text-center hover:bg-white text-black font-bold py-2 px-4 rounded-xl bg-[#FFAD00] transition duration-300">
+              Email Us
             </a>
           </div>
-          
-          
-          <div className="flex space-x-4 my-4">
-            <a href="#" className="text-white text-2xl hover:text-blue-800"><FaFacebookF /></a>
-            <a href="#" className="text-white text-2xl hover:text-purple-600"><FaInstagram /></a>
-            <a href="#" className="text-white text-2xl hover:text-blue-400"><FaTwitter /></a>
-            <a href="#" className="text-white text-2xl hover:text-blue-900"><FaLinkedinIn /></a>
-            <a href="#" className="text-white text-2xl hover:text-gray-900"><FaGithub /></a>
-          </div>
-          {/* <Link href="/Contact">
-  <button className="px-4 py-2 bg-white text-[#222222] hover:text-[#FFAD00] cursor-pointer font-bold rounded-lg hover:bg-gray-200">
-    Subscribe
-  </button>
-</Link> */}
-
         </div>
       </div>
 

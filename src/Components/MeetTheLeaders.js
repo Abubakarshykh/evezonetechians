@@ -6,7 +6,7 @@ export default function MeetTheLeaders() {
   const leaders = [
     { name: "Yousuf Murad", role: "Polemarch", title: "War Leader", image: "/Aboutus/Yousuf.png" },
     { name: "Rizwan Waseem", role: "Strategos", title: "General", image: "/Aboutus/Rizwan.png" },
-    { name: "Irtaza Yahya", role: "Hipparch", title: "Cavalry Commander", image: "/Aboutus/Irtiza.png" },
+    { name: "Irtaza Yahya", role: "Hipparch", title: "Cavalry Commander", image: "/Aboutus/M.IrtazaYahya.png" },
   ];
 
   return (

@@ -19,7 +19,7 @@ export default function Soldier() {
 
           <div className="text-base md:text-xl tracking-wider text-gray-300 leading-6 md:leading-7 mt-4">
 
-          <p className="text-[#FFAD00]">The Evzones,</p> Greece&rsquo;s elite ceremonial unit, embody precision and discipline&nbsp;
+           Greece&rsquo;s elite ceremonial unit, embody precision and discipline&nbsp;
 through rigorous&nbsp;
 <span className="text-[#FFAD00]">quality assurance</span>
 &nbsp;in training, uniforms, and performance.

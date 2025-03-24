@@ -158,10 +158,10 @@ const ElfsightWidget = () => {
     <div className="my-20 py-20">
        <div className="flex flex-col items-center justify-center py-10 px-4 text-center">
       <h1 className="text-4xl font-bold text-gray-400 md:text-5xl">
-        Get in Touch with <span className="text-white">EveZone</span>
+      Get in Touch with <span className="text-white">The Evzones!</span>
       </h1>
       <p className="mt-4 text-lg text-white md:text-xl">
-        Have questions or need assistance? Reach out to us and We&apos;ll be happy to help.
+      Lets discuss what you have in mind and make it happen &mdash; with Perfection
       </p>
     </div>
       <div

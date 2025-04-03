@@ -9,18 +9,6 @@ import OurProjects from "@/Components/OurProjects";
 import InfiniteMovingCards from "@/Components/TestimonialsN";
 
 export default function Home() {
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setLoading(false), 3000); // Preloader for 3 sec
-  //   return () => clearTimeout(timer);
-  // }, []);
-
-  // const testimonials = [
-  //   { quote: "Best service ever!", name: "John Doe", title: "CEO, Company" },
-  //   { quote: "Loved the experience!", name: "Jane Smith", title: "Designer" },
-  //   { quote: "Highly recommend it!", name: "Alice Johnson", title: "Manager" },
-  // ];
   const testimonials = [
     {
       image: "/images/test_1.png",
@@ -50,13 +38,11 @@ export default function Home() {
       image: "/images/test_L.png",
       quote: "DevNest delivered a top-notch website—visually stunning, user-friendly, and on time. Their seamless collaboration and commitment to excellence set them apart in web development.",
       name: "Rick Wright"
-      // title: "Marketing Director, Company B",
     },
     {
       image: "/images/test_R.png",
       quote: "DevNest delivered a top-notch website—visually stunning, user-friendly, and on time. Their seamless collaboration and commitment to excellence set them apart in web development.",
       name: "Devon Miles"
-      // title: "Freelancer",
     },
   ];
   

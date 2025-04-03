@@ -42,7 +42,7 @@ export default function Footer() {
             <div className="text-left">
               <h3 className="font-boldest mb-2 text-2xl">Support</h3>
               <ul className="space-y-2 text-md font-medium leading-6">
-                <li><Link href="/Contact">Contact Us</Link></li>
+                <li><Link href="/Contact">ContactUs</Link></li>
                 <li><Link href="/privacy">Privacy Policy</Link></li>
               </ul>
             </div>

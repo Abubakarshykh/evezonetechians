@@ -14,7 +14,7 @@ export default function Page() {
       <Line/>
       <Soldier/>
       <Arrow showOnAllScreens={true} />
-      <MeetTheLeaders/>
+      // <MeetTheLeaders/>
       <AbtRect/>
       </div>
     </>

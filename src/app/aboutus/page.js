@@ -14,6 +14,7 @@ export default function Page() {
       <Line/>
       <Soldier/>
       <Arrow showOnAllScreens={true} />
+    //needed to hide the founding members for personal reasons
       // <MeetTheLeaders/>
       <AbtRect/>
       </div>
